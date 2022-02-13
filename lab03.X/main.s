@@ -64,11 +64,11 @@ main:
 	    ; Guardamos caracter de CONT en ASCII
    
 LOOP:	
-    CALL    CHECKBOTON
-    CALL    CHECKBOTON2
-    CALL    LOOP_SEGUNDOS
-    DECF    PORTD
-    CALL    PRENDER_LED
+    CALL    CHECKBOTON		    ; chequeamos el boton para incrementar el contador
+    CALL    CHECKBOTON2		    ; chequeamos el boton para decrementar el contador
+    CALL    LOOP_SEGUNDOS	    ; 1 segundo de espera
+    DECF    PORTD		    ; sumamos 1 al puerto d
+    CALL    PRENDER_LED		    ; nos dirigimos a la sub-rutina la cual prende o apaga el LED
     GOTO    LOOP
 
 LOOP_SEGUNDOS:
